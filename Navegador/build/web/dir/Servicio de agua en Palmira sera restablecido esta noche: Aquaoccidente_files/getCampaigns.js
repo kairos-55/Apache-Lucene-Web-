@@ -1,0 +1,1 @@
+adapt_dataRequest_elpais_admp.campaignCallback({"reference":false,"evId":"1aa12102-5809-4ca1-85d9-71446733b2a4","campaignIds":{}})

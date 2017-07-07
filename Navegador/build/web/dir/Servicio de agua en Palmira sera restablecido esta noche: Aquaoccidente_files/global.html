@@ -1,0 +1,174 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<script type="text/javascript" charset="utf-8" src="global_data/getCampaigns.js"></script><script type="text/javascript" charset="utf-8" src="global_data/validate.js"></script></head>
+<body>
+	<script type="text/javascript">
+		var origin = "*";
+		function _getUserId(data){
+			window.parent.postMessage(JSON.stringify(data), origin);   
+		}
+		var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+		var eventer = window[eventMethod];
+		var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+		var enr_vars = {};
+		var adtlgcen_SETTINGS = {};
+		eventer(messageEvent, function (e) {
+			try{
+				var data = JSON.parse(e.data);
+				if(data["action"]==="getUser"){
+					origin = data["origin"];
+					enr_vars = data["enr_vars"];
+					adtlgcen_SETTINGS = data["enr_settings"];
+					admp_.init(_getUserId);
+			    }				
+			}catch(e){
+				//ignore
+			}
+		}, false); 
+	</script>
+	<script type="text/javascript">
+		({
+			name:"adtlgcen_Cookie",
+			set:function(n,v,c){var d,e="";d=new Date();if(c){d.setTime(d.getTime()+c*60*60*1000);};e="; expires="+d.toGMTString();document.cookie=escape(n)+"="+v+e+"; path=/";},
+			get:function(n){var e,b,p,c=document.cookie;p=n+"=";b=c.indexOf(";"+" "+p);if(b==-1){b=c.indexOf(p);if(b!==0){return "";}}else{b+=2;}e=c.indexOf(";",b);if(e==-1){e=c.length;}return unescape(c.substring(b+p.length,e));},
+			unset:function(n){return this.set(n,"");},
+			init:function(){window[this.name]=this;}
+		}).init();
+
+		window.adtlgcen = window.adtlgcen || {};
+		adtlgcen.util = adtlgcen.util || {};
+		
+		adtlgcen.util.validateEvIdCookie = function(evIdCookieName) {
+			return adtlgcen_Cookie.get(evIdCookieName) && adtlgcen_Cookie.get(evIdCookieName) != "-entered";
+		};
+		
+		adtlgcen.util.localStorageEnabled = function() {
+	        try {
+	            return typeof window.localStorage === "object" && typeof window.localStorage.getItem === "function";
+	        } catch (e) {
+	            return false
+	        }
+	    };
+		
+		window.admp_ = new function () {};
+	    
+		admp_.init = function(callback) {
+			window[enr_vars.dataRequest] = new DataRequest(callback);
+			window[enr_vars.evid] = adtlgcen_Cookie.get(enr_vars.evid);
+			window[enr_vars.evid_v] = adtlgcen_Cookie.get(enr_vars.evid_v);
+	        window[enr_vars.adptseg] = adtlgcen_Cookie.get(enr_vars.adptseg).replace(/#/g, "=");
+
+	        if(adtlgcen.util.localStorageEnabled()){
+				if(window[enr_vars.evid]){
+					localStorage.setItem(enr_vars.evid, window[enr_vars.evid]);
+					if(window[enr_vars.evid_v]){
+						localStorage.setItem(enr_vars.evid_v, window[enr_vars.evid_v]);					
+					}
+				}else{
+					window[enr_vars.evid] = localStorage.getItem(enr_vars.evid);
+					window[enr_vars.evid_v] = localStorage.getItem(enr_vars.evid_v);
+				}
+			}
+	        if ("1" != adtlgcen_Cookie.get(enr_vars.adptset)) {
+	            var url = adtlgcen_SETTINGS.TC_URL + "/getCampaigns.do?includeSegments=true&callback=" + enr_vars.dataRequest + ".campaignCallback&cb=" + new Date().getTime();
+	            url += adtlgcen_SETTINGS.SCRIPT_VERSION_PARAMETER;
+	            if(window[enr_vars.evid]){
+	            	url += "&evid="+window[enr_vars.evid];
+	            }
+	            window[enr_vars.dataRequest].send(url);
+	        } else {
+	        	if(callback){
+	        		var responseObj = {"action":"getUser", "evid":window[enr_vars.evid], "segments": window[enr_vars.adptseg]};
+					if(window[enr_vars.evid_v]){
+						responseObj["vv"] = window[enr_vars.evid_v];
+					}
+					callback(responseObj);
+				}
+	        }
+	    };
+		
+		function DataRequest(callback) {
+		    this.callback = callback;
+	        this.send = function (url) {
+				var scriptNode = document.createElement("script"); 
+				scriptNode.setAttribute("type", "text/javascript");
+			    scriptNode.setAttribute("charset", "utf-8");
+				scriptNode.setAttribute("src", url);
+				document.getElementsByTagName("head")[0].appendChild(scriptNode); 
+		    };
+			this.campaignCallback = function(data){
+				var result = "";
+				var segments = "";
+				if(data){
+	                adtlgcen_Cookie.set(enr_vars.evid, data["evId"], 18 * 30 * 24); //18 months
+	                if(data["vv"]){
+	                	adtlgcen_Cookie.set(enr_vars.evid_v, data["vv"], 18 * 30 * 24);
+	                }
+	                
+					if("optout"!=data["evId"]){
+						var segmentsData = data["segments"];
+						if(segmentsData){
+							for(var i=0;i<segmentsData.length;i++){
+								if(segmentsData[i]){
+									segments+=segmentsData[i]+";";
+								}
+							}
+							if(segments){
+	                            adtlgcen_Cookie.set(enr_vars.adptseg, segments.replace(/;/g, "-").replace(/=/g, "#"), 2);
+	                            window[enr_vars.adptseg] = segments.replace(/;/g, "-");
+							}
+						}
+					}
+				}
+	            if (adtlgcen.util.validateEvIdCookie(enr_vars.evid)) {
+					adtlgcen_Cookie.set(enr_vars.adptset, "1", 2);
+	                window[enr_vars.evid] = adtlgcen_Cookie.get(enr_vars.evid);
+	                window[enr_vars.evid_v] = adtlgcen_Cookie.get(enr_vars.evid_v);
+	                if(adtlgcen.util.localStorageEnabled() && window[enr_vars.evid]){
+	    				localStorage.setItem(enr_vars.evid, window[enr_vars.evid]);
+	    				if(window[enr_vars.evid_v]){
+	    					localStorage.setItem(enr_vars.evid_v, window[enr_vars.evid_v]);
+		                }
+	    			}
+					if(this.callback){
+						var responseObj = {"action":"getUser", "evid":window[enr_vars.evid], "segments": window[enr_vars.adptseg]};
+						if(window[enr_vars.evid_v]){
+							responseObj["vv"] = window[enr_vars.evid_v];
+						}
+						this.callback(responseObj);
+					}
+				}else{
+	                var url = adtlgcen_SETTINGS.TC_URL + "/validate?callback=" + enr_vars.dataRequest + ".validateCallback&cb=" + new Date().getTime();
+					url+=adtlgcen_SETTINGS.SCRIPT_VERSION_PARAMETER;
+	                window[enr_vars.dataRequest].send(url);
+				}
+			};
+			this.validateCallback = function(data) {
+				if (data) {
+	                adtlgcen_Cookie.set(enr_vars.evid, data["evId"], 18 * 30 * 24);
+	                if(data["vv"]){
+	                	adtlgcen_Cookie.set(enr_vars.evid_v, data["vv"], 18 * 30 * 24);
+	                }
+	                
+	                window[enr_vars.evid] = adtlgcen_Cookie.get(enr_vars.evid);
+	                window[enr_vars.evid_v] = adtlgcen_Cookie.get(enr_vars.evid_v);
+	                if(adtlgcen.util.localStorageEnabled() && window[enr_vars.evid]){
+	    				localStorage.setItem(enr_vars.evid, window[enr_vars.evid]);
+	    				if(window[enr_vars.evid_v]){
+	    					localStorage.setItem(enr_vars.evid_v, window[enr_vars.evid_v]);
+		                }
+	    			}
+					adtlgcen_Cookie.set(enr_vars.adptset, "1", 2);
+					if(this.callback){
+						var responseObj = {"action":"getUser", "evid":window[enr_vars.evid], "segments": window[enr_vars.adptseg]};
+						if(window[enr_vars.evid_v]){
+							responseObj["vv"] = window[enr_vars.evid_v];
+						}
+						this.callback(responseObj);
+					}
+				}
+			};
+	    };
+	</script>
+
+</body></html>

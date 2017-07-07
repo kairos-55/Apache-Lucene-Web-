@@ -1,0 +1,851 @@
+
+	//var pages = ,
+	platform = "desktop";
+	var currentUri = document.location.pathname;
+	uri = currentUri.split('/');
+	url_dfp = '/'+uri[1];
+	uri_length = uri.length;
+	function eplAD4M(){}
+	function endGoogleTag() {
+		googletag.pubads().enableSingleRequest();
+		googletag.pubads().collapseEmptyDivs();
+		if (typeof CX_SEGMENTS !== 'undefined') {
+			//console.log('CxSegments Yes');
+			//console.log(CX_SEGMENTS);
+			googletag.pubads().setTargeting("CxSegments",CX_SEGMENTS);
+		}else{
+			//console.log('CxSegments No');
+		}
+		googletag.enableServices();
+	}
+
+	if(platform == 'desktop'){
+		if (article == true){
+			googletag.cmd.push(function() {
+				//// AHORA EN PORTADA
+				if (!(
+							seccion == 'entretenimiento/horoscopo' || seccion == 'sociales' || seccion == 'sociales/cocteles' ||
+							seccion == 'sociales/matrimonios' || seccion == 'sociales/cumpleanos' || seccion == 'sociales/obituarios'
+					)) {
+					console.log('Ahora_en_Portada');
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Ahora_en_Portada', [300, 250], 'div-gpt-ad-1496238257626-0').addService(googletag.pubads());
+				}
+				//// CONTINUA LEYENDO
+				if (!(
+						seccion == 'opinion/editorial' || seccion == 'opinion/caricaturas' || seccion == 'opinion/molino-de-papel' ||
+						seccion == 'opinion/columnistas' || seccion == 'multimedia/videos' || seccion == 'multimedia/especiales' ||
+						seccion == 'multimedia/fotos' || seccion == 'multimedia/audios' || seccion == 'multimedia/infografias' ||
+						seccion == 'entretenimiento/horoscopo' || seccion == 'sociales' || seccion == 'sociales/cocteles' ||
+						seccion == 'sociales/matrimonios' || seccion == 'sociales/cumpleanos' || seccion == 'sociales/obituarios'
+					)) {
+					console.log('Continua_Leyendo');
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Continua_Leyendo', [300, 250], 'div-gpt-ad-1496238455133-0').addService(googletag.pubads());
+				}
+			});
+		}
+		switch (seccion) {
+			case 'home': /// HOME Y BUSQUEDA
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function() {
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[728, 90],[970, 90]], 'div-gpt-ad-1481062854008-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 250]], 'div-gpt-ad-1481062854008-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 250]], 'div-gpt-ad-1481062854008-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 250]], 'div-gpt-ad-1481062854008-3').setTargeting('Pos', ['3']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 250]], 'div-gpt-ad-1481062854008-4').setTargeting('Pos', ['4']).addService(googletag.pubads());
+				// CAMBIO POR TIQUETES BARATOS
+				//googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 250]], 'div-gpt-ad-1481062854008-5').setTargeting('Pos', ['5']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 250]], 'div-gpt-ad-1481062854008-6').setTargeting('Pos', ['6']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 250]], 'div-gpt-ad-1481062854008-7').setTargeting('Pos', ['7']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 250]], 'div-gpt-ad-1481062854008-8').setTargeting('Pos', ['8']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 250]], 'div-gpt-ad-1481062854008-9').setTargeting('Pos', ['9']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 600]], 'div-gpt-ad-1481062854008-10').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1481062854008-11').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[160, 600]], 'div-gpt-ad-1481062854008-12').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[160, 600]], 'div-gpt-ad-1481062854008-13').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1481062854008-14').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				//googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 100]], 'div-gpt-ad-1481062854008-15').addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', 'div-gpt-ad-1481062854008-16').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[1, 1]], 'div-gpt-ad-1481062854008-17').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[1000, 150]], 'div-gpt-ad-1481062854008-18').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				endGoogleTag();
+			});
+			break;
+			case 'cali':   /// CALI
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function() {
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', [[728, 90],[970, 90]], 'div-gpt-ad-1483017206924-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1483017206924-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', [[160, 600]], 'div-gpt-ad-1483017206924-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', [[160, 600]], 'div-gpt-ad-1483017206924-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1483017206924-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', 'div-gpt-ad-1483017206924-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', [[1000, 150]], 'div-gpt-ad-1483017206924-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', [[1, 1]], 'div-gpt-ad-1483017206924-9').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', [[300, 600]], 'div-gpt-ad-1483017206924-7').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', [[300, 250]], 'div-gpt-ad-1483017206924-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Cali', [[300, 250]], 'div-gpt-ad-1483017206924-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'colombia':	///COLOMBIA
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', [[728, 90],[970, 90]], 'div-gpt-ad-1456387936598-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1456387936598-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', [[160, 600]], 'div-gpt-ad-1456387936598-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', [[160, 600]], 'div-gpt-ad-1456387936598-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1456387936598-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', 'div-gpt-ad-1456387936598-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', [[1000, 150]], 'div-gpt-ad-1456387936598-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', [[300, 600]], 'div-gpt-ad-1456387936598-7').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', [[1, 1]], 'div-gpt-ad-1456387936598-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', [[300, 250]], 'div-gpt-ad-1456387936598-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Colombia', [[300, 250]], 'div-gpt-ad-1456387936598-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'entretenimiento':
+			case 'entretenimiento/celebridades':
+			case 'entretenimiento/cultura':
+			case 'entretenimiento/musica':
+			case 'entretenimiento/moda':
+			case 'entretenimiento/viajes': ///ENTRETENIMIENTO
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[728, 90],[970, 90]], 'div-gpt-ad-1563254687987-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1563254687987-2').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[160, 600]], 'div-gpt-ad-1563254687987-3').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[160, 600]], 'div-gpt-ad-1563254687987-4').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1563254687987-5').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[300, 600]], 'div-gpt-ad-1563254687987-6').setTargeting('Pos', ['1']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', 'div-gpt-ad-1563254687987-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[1, 1]], 'div-gpt-ad-1563254687987-10').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[1000, 150]], 'div-gpt-ad-1563254687987-11').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				}else{
+					if (seccion == 'entretenimiento') {
+						googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[300, 600]], 'div-gpt-ad-1563254687987-7').setTargeting('Pos', ['2']).addService(googletag.pubads());
+						googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[300, 600]], 'div-gpt-ad-1563254687987-9').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					}
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[300, 250]], 'div-gpt-ad-1563254687987-1').addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'entretenimiento/horoscopo':   ///HOROSCOPO
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[728, 90],[970, 90]], 'div-gpt-ad-1563254687987-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[300, 250]], 'div-gpt-ad-1563254687987-1').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1563254687987-2').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[160, 600]], 'div-gpt-ad-1563254687987-3').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[160, 600]], 'div-gpt-ad-1563254687987-4').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1563254687987-5').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Entretenimiento', 'div-gpt-ad-1563254687987-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				endGoogleTag();
+			});
+			break;
+			case 'blogs': ///BLOGS
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Blogs', [[728, 90],[970, 90]], 'div-gpt-ad-1483017180173-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Blogs', [[300, 250]], 'div-gpt-ad-1483017180173-1').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Blogs', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1483017180173-2').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Blogs', [[160, 600]], 'div-gpt-ad-1483017180173-3').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Blogs', [[160, 600]], 'div-gpt-ad-1483017180173-4').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Blogs', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1483017180173-5').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Blogs', 'div-gpt-ad-1483017180173-6').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Blogs', [[1, 1]], 'div-gpt-ad-1483017180173-7').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Blogs', [[1000, 150]], 'div-gpt-ad-1483017180173-8').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				endGoogleTag();
+			});
+			break;
+			case 'deportes':
+			case 'deportivo-cali':
+			case 'america-de-cali': ///DEPORTE
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Deportes', [[728, 90],[970, 90]], 'div-gpt-ad-1325698798789-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Deportes', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1325698798789-2').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Deportes', [[160, 600]], 'div-gpt-ad-1325698798789-3').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Deportes', [[160, 600]], 'div-gpt-ad-1325698798789-4').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Deportes', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1325698798789-5').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Deportes', 'div-gpt-ad-1325698798789-7').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Deportes', [[1000, 150]], 'div-gpt-ad-1325698798789-9').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Deportes', [[300, 600]], 'div-gpt-ad-1325698798789-6').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Deportes', [[1, 1]], 'div-gpt-ad-1325698798789-8').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Deportes', [[300, 250]], 'div-gpt-ad-1325698798789-1').addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'economia': ///ECONOMIA
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', [[728, 90],[970, 90]], 'div-gpt-ad-1456897564512-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1456897564512-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', [[160, 600]], 'div-gpt-ad-1456897564512-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', [[160, 600]], 'div-gpt-ad-1456897564512-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1456897564512-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', 'div-gpt-ad-1456897564512-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', [[1000, 150]], 'div-gpt-ad-1456897564512-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', [[300, 600]], 'div-gpt-ad-1456897564512-7').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', [[1, 1]], 'div-gpt-ad-1456897564512-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', [[300, 250]], 'div-gpt-ad-1456897564512-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Economia', [[300, 250]], 'div-gpt-ad-1456897564512-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'judicial': ///JUDICIAL
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', [[728, 90],[970, 90]], 'div-gpt-ad-1456897983582-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1456897983582-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', [[160, 600]], 'div-gpt-ad-1456897983582-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', [[160, 600]], 'div-gpt-ad-1456897983582-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1456897983582-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', 'div-gpt-ad-1456897983582-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', [[1000, 150]], 'div-gpt-ad-1456897983582-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', [[300, 600]], 'div-gpt-ad-1456897983582-7').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', [[1, 1]], 'div-gpt-ad-1456897983582-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', [[300, 250]], 'div-gpt-ad-1456897983582-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Judicial', [[300, 250]], 'div-gpt-ad-1456897983582-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'medio-ambiente': ///MEDIO AMBIENTE
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', [[728, 90],[970, 90]], 'div-gpt-ad-1235498765742-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1235498765742-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', [[160, 600]], 'div-gpt-ad-1235498765742-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', [[160, 600]], 'div-gpt-ad-1235498765742-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1235498765742-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', 'div-gpt-ad-1235498765742-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', [[1000, 150]], 'div-gpt-ad-1235498765742-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', [[300, 600]], 'div-gpt-ad-1235498765742-7').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', [[1, 1]], 'div-gpt-ad-1235498765742-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', [[300, 250]], 'div-gpt-ad-1235498765742-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Medio_Ambiente', [[300, 250]], 'div-gpt-ad-1235498765742-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'multimedia':
+			case 'multimedia/videos':
+			case 'multimedia/fotos':
+			case 'multimedia/audios':
+			case 'multimedia/infografias':
+			case 'multimedia/especiales':  ///MULTIMEDIA
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', [[728, 90],[970, 90]], 'div-gpt-ad-1568798713254-0').addService(googletag.pubads());
+				//googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', [[300, 250]], 'div-gpt-ad-1568798713254-1').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1568798713254-2').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', [[160, 600]], 'div-gpt-ad-1568798713254-3').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', [[160, 600]], 'div-gpt-ad-1568798713254-4').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1568798713254-5').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', 'div-gpt-ad-1568798713254-7').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				//googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', [[300, 100]], 'div-gpt-ad-1568798713254-8').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				//googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', [[1000, 150]], 'div-gpt-ad-1568798713254-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', [[1, 1]], 'div-gpt-ad-1568798713254-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Multimedia', [[300, 600]], 'div-gpt-ad-1568798713254-6').addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'mundo': ///MUNDO
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', [[728, 90],[970, 90]], 'div-gpt-ad-1456879821351-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1456879821351-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', [[160, 600]], 'div-gpt-ad-1456879821351-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', [[160, 600]], 'div-gpt-ad-1456879821351-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1456879821351-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', 'div-gpt-ad-1456879821351-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', [[1000, 150]], 'div-gpt-ad-1456879821351-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', [[300, 600]], 'div-gpt-ad-1456879821351-7').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', [[1, 1]], 'div-gpt-ad-1456879821351-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', [[300, 250]], 'div-gpt-ad-1456879821351-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Mundo', [[300, 250]], 'div-gpt-ad-1456879821351-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'opinion': case 'opinion/editorial': case 'opinion/columnistas': case 'opinion/caricaturas': case 'opinion/molino-de-papel': ///OPINION
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Opinion', [[728, 90],[970, 90]], 'div-gpt-ad-1564879563235-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Opinion', [[300, 250]], 'div-gpt-ad-1564879563235-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Opinion', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1564879563235-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Opinion', [[160, 600]], 'div-gpt-ad-1564879563235-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Opinion', [[160, 600]], 'div-gpt-ad-1564879563235-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Opinion', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1564879563235-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Opinion', 'div-gpt-ad-1564879563235-7').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Opinion', [[1000, 150]], 'div-gpt-ad-1564879563235-9').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Opinion', [[1, 1]], 'div-gpt-ad-1564879563235-8').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Opinion', [[300, 250]], 'div-gpt-ad-1564879563235-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'politica': ///POLITICA
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', [[728, 90],[970, 90]], 'div-gpt-ad-1354876123898-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1354876123898-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', [[160, 600]], 'div-gpt-ad-1354876123898-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', [[160, 600]], 'div-gpt-ad-1354876123898-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1354876123898-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', 'div-gpt-ad-1354876123898-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', [[1000, 150]], 'div-gpt-ad-1354876123898-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', [[300, 600]], 'div-gpt-ad-1354876123898-7').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', [[1, 1]], 'div-gpt-ad-1354876123898-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', [[300, 250]], 'div-gpt-ad-1354876123898-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Politica', [[300, 250]], 'div-gpt-ad-1354876123898-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'sociales': ///SOCIALES
+			case 'sociales/cocteles':
+			case 'sociales/matrimonios':
+			case 'sociales/cumpleanos':
+			case 'sociales/obituarios':
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', [[728, 90],[970, 90]], 'div-gpt-ad-1324657988413-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', [[300, 250]], 'div-gpt-ad-1324657988413-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				//googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', [[300, 250]], 'div-gpt-ad-1324657988413-3').setTargeting('Pos', ['3']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1324657988413-4').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', [[160, 600]], 'div-gpt-ad-1324657988413-5').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', [[160, 600]], 'div-gpt-ad-1324657988413-6').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1324657988413-7').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', 'div-gpt-ad-1324657988413-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', [[1000, 150]], 'div-gpt-ad-1324657988413-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', [[1, 1]], 'div-gpt-ad-1324657988413-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Sociales', [[300, 250]], 'div-gpt-ad-1324657988413-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'tecnologia': ///TECNOLOGIA
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', [[728, 90],[970, 90]], 'div-gpt-ad-1324679843213-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1324679843213-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', [[160, 600]], 'div-gpt-ad-1324679843213-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', [[160, 600]], 'div-gpt-ad-1324679843213-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1324679843213-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', 'div-gpt-ad-1324679843213-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', [[1000, 150]], 'div-gpt-ad-1324679843213-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', [[300, 600]], 'div-gpt-ad-1324679843213-7').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', [[1, 1]], 'div-gpt-ad-1324679843213-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', [[300, 250]], 'div-gpt-ad-1324679843213-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Tecnologia', [[300, 250]], 'div-gpt-ad-1324679843213-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'valle': ///VALLE
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', [[728, 90],[970, 90]], 'div-gpt-ad-1456532154321-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1456532154321-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', [[160, 600]], 'div-gpt-ad-1456532154321-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', [[160, 600]], 'div-gpt-ad-1456532154321-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1456532154321-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', 'div-gpt-ad-1456532154321-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', [[1000, 150]], 'div-gpt-ad-1456532154321-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', [[300, 600]], 'div-gpt-ad-1456532154321-7').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', [[1, 1]], 'div-gpt-ad-1456532154321-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', [[300, 250]], 'div-gpt-ad-1456532154321-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Valle', [[300, 250]], 'div-gpt-ad-1456532154321-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'pages': ///SERVICIOS
+			case 'contact': ///CONTACTENOS
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[728, 90],[970, 90]], 'div-gpt-ad-1481062854008-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1481062854008-11').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[160, 600]], 'div-gpt-ad-1481062854008-12').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[160, 600]], 'div-gpt-ad-1481062854008-13').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				//googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[1000, 150]], 'div-gpt-ad-1481062854008-18').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1481062854008-14').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', 'div-gpt-ad-1481062854008-16').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				endGoogleTag();
+			});
+			break;
+			case 'search': ///RESULTADOS
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function(){
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[728, 90],[970, 90]], 'div-gpt-ad-1481062854008-0').addService(googletag.pubads());
+				//googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[300, 250]], 'div-gpt-ad-1481062854008-1').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1481062854008-11').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[160, 600]], 'div-gpt-ad-1481062854008-12').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[160, 600]], 'div-gpt-ad-1481062854008-13').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1481062854008-14').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', 'div-gpt-ad-1481062854008-16').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Home', [[1000, 150]], 'div-gpt-ad-1481062854008-18').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				endGoogleTag();
+			});
+			break;
+			case 'familia': ///FAMILIA
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function () {
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', [[728, 90],[970, 90]], 'div-gpt-ad-1484837580455-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1484837580455-2').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', [[160, 600]], 'div-gpt-ad-1484837580455-3').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', [[160, 600]], 'div-gpt-ad-1484837580455-4').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1484837580455-5').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', 'div-gpt-ad-1484837580455-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', [[1000, 150]], 'div-gpt-ad-1484837580455-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', [[300, 600]], 'div-gpt-ad-1484837580455-6').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', [[1, 1]], 'div-gpt-ad-1484837580455-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', [[300, 250]], 'div-gpt-ad-1484837580455-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Familia', [[300, 250]], 'div-gpt-ad-1484837580455-7').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'proceso-de-paz': ///PROCESO DE PAZ
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function () {
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', [[728, 90],[970, 90]], 'div-gpt-ad-1484837557875-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1484837557875-2').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', [[160, 600]], 'div-gpt-ad-1484837557875-3').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', [[160, 600]], 'div-gpt-ad-1484837557875-4').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1484837557875-5').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', 'div-gpt-ad-1484837557875-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', [[1000, 150]], 'div-gpt-ad-1484837557875-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', [[300, 600]], 'div-gpt-ad-1484837557875-6').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', [[1, 1]], 'div-gpt-ad-1484837557875-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', [[300, 250]], 'div-gpt-ad-1484837557875-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Proceso_de_Paz', [[300, 250]], 'div-gpt-ad-1484837557875-7').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+			case 'lo-positivo': ///LO POSITIVO
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function () {
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', [[728, 90],[970, 90]], 'div-gpt-ad-1481213547832-0').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', [[300, 250]], 'div-gpt-ad-1481213547832-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', [[300, 250]], 'div-gpt-ad-1481213547832-7').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1481213547832-2').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', [[160, 600]], 'div-gpt-ad-1481213547832-3').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', [[160, 600]], 'div-gpt-ad-1481213547832-4').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1481213547832-5').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', [[300, 600]], 'div-gpt-ad-1481213547832-6').addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', 'div-gpt-ad-1481213547832-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', [[1, 1]], 'div-gpt-ad-1481213547832-9').addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Lo_Positivo', [[1000, 150]], 'div-gpt-ad-1481213547832-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				endGoogleTag();
+			});
+			break;
+			case 'vehiculos': ///LO POSITIVO
+			console.log('ADS desktop seccion => '+seccion);
+			console.log('ADS desktop article => '+article);
+			googletag.cmd.push(function () {
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', [[728, 90],[970, 90]], 'div-gpt-ad-1496774810677-0').addService(googletag.pubads());
+        googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', [[1000, 30], [1000, 50], [1000, 90], [1000, 150]], 'div-gpt-ad-1496774810677-3').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+        googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', [[160, 600]], 'div-gpt-ad-1496774810677-4').setTargeting('Form', ['Lateral_Izquierdo']).addService(googletag.pubads());
+        googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', [[160, 600]], 'div-gpt-ad-1496774810677-5').setTargeting('Form', ['Lateral_Derecho']).addService(googletag.pubads());
+        googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', [[1000, 50], [1000, 30], [1000, 80]], 'div-gpt-ad-1496774810677-6').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+        googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', 'div-gpt-ad-1496774810677-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+        googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', [[1000, 150]], 'div-gpt-ad-1496774810677-10').setTargeting('Form', ['Native']).addService(googletag.pubads());
+				if (article == true) {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', [[300, 600]], 'div-gpt-ad-1496774810677-7').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', [[1, 1]], 'div-gpt-ad-1496774810677-9').addService(googletag.pubads());
+				}else{
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', [[300, 250]], 'div-gpt-ad-1496774810677-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Desktop/EP_Vehiculos', [[300, 250]], 'div-gpt-ad-1496774810677-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				}
+				endGoogleTag();
+			});
+			break;
+		}
+	}
+	if(platform == 'mobile'){
+		if (article == true){
+			console.log('ADS mobile seccion => '+seccion);
+			console.log('ADS mobile article => '+article);
+			googletag.cmd.push(function() {
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Nota_Interna', [[300, 250]], 'div-gpt-ad-1324587489574-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Nota_Interna', [[300, 250]], 'div-gpt-ad-1324587489574-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Nota_Interna', [[320, 50], [320, 80]], 'div-gpt-ad-1324587489574-2').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+				googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Nota_Interna', 'div-gpt-ad-1324587489574-3').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+				googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Nota_Interna', [[320, 50]], 'div-gpt-ad-1324587489574-4').setTargeting('Form', ['Desplegable']).addService(googletag.pubads());
+				endGoogleTag();
+			});
+		}else{
+			switch (seccion) {
+				case 'home':   /// HOME
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function() {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[320, 50], [320, 80]], 'div-gpt-ad-1481811834487-0').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[300, 250]], 'div-gpt-ad-1481811834487-1').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[300, 250]], 'div-gpt-ad-1481811834487-2').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[300, 250]], 'div-gpt-ad-1481811834487-3').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[300, 250]], 'div-gpt-ad-1481811834487-4').setTargeting('Pos', ['4']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[300, 250]], 'div-gpt-ad-1481811834487-5').setTargeting('Pos', ['5']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[300, 250]], 'div-gpt-ad-1481811834487-6').setTargeting('Pos', ['6']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[300, 250]], 'div-gpt-ad-1481811834487-7').setTargeting('Pos', ['7']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', 'div-gpt-ad-1481811834487-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[300, 100]], 'div-gpt-ad-1481811834487-9').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'blogs':   ///BLOGS
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Blogs', [[300, 250]], 'div-gpt-ad-1483017180174-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Blogs', [[300, 250]], 'div-gpt-ad-1483017180174-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Blogs', [[320, 50], [320, 80]], 'div-gpt-ad-1483017180174-2').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Blogs', 'div-gpt-ad-1483017180174-3').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Blogs', [[300, 100]], 'div-gpt-ad-1483017180174-4').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'cali':   ///CALI
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Cali', [[300, 250]], 'div-gpt-ad-1483017206925-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Cali', [[300, 250]], 'div-gpt-ad-1483017206925-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Cali', [[300, 250]], 'div-gpt-ad-1483017206925-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Cali', [[320, 50], [320, 80]], 'div-gpt-ad-1483017206925-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Cali', 'div-gpt-ad-1483017206925-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Cali', [[300, 100]], 'div-gpt-ad-1483017206925-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'cali/pico-y-placa':
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Cali', [[300, 250]], 'div-gpt-ad-1481811834487-1').addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Cali', [[320, 50], [320, 80]], 'div-gpt-ad-1483017206925-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', 'div-gpt-ad-1481811834487-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'colombia':   ///COLOMBIA
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Colombia', [[300, 250]], 'div-gpt-ad-1456387936599-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Colombia', [[300, 250]], 'div-gpt-ad-1456387936599-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Colombia', [[300, 250]], 'div-gpt-ad-1456387936599-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Colombia', [[320, 50], [320, 80]], 'div-gpt-ad-1456387936599-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Colombia', 'div-gpt-ad-1456387936599-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Colombia', [[300, 100]], 'div-gpt-ad-1456387936599-5').addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'deportes':
+				case 'deportivo-cali':
+				case 'america-de-cali': ///DEPORTE
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Deportes', [[300, 250]], 'div-gpt-ad-1325698798790-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Deportes', [[300, 250]], 'div-gpt-ad-1325698798790-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Deportes', [[300, 250]], 'div-gpt-ad-1325698798790-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Deportes', [[320, 50], [320, 80]], 'div-gpt-ad-1325698798790-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Deportes', 'div-gpt-ad-1325698798790-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Deportes', [[300, 100]], 'div-gpt-ad-1325698798790-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'economia':   ///ECONOMIA
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Economia', [[300, 250]], 'div-gpt-ad-1456897564513-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Economia', [[300, 250]], 'div-gpt-ad-1456897564513-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Economia', [[300, 250]], 'div-gpt-ad-1456897564513-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Economia', [[320, 50], [320, 80]], 'div-gpt-ad-1456897564513-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Economia', 'div-gpt-ad-1456897564513-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Economia', [[300, 100]], 'div-gpt-ad-1456897564513-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'entretenimiento':
+				case 'entretenimiento/celebridades':
+				case 'entretenimiento/cultura':
+				case 'entretenimiento/musica':
+				case 'entretenimiento/moda':
+				case 'entretenimiento/viajes':
+				case 'entretenimiento/horoscopo':   ///ENTRETENIMIENTO
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Entretenimiento', [[300, 250]], 'div-gpt-ad-1563254687988-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Entretenimiento', [[300, 250]], 'div-gpt-ad-1563254687988-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Entretenimiento', [[300, 250]], 'div-gpt-ad-1563254687988-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Entretenimiento', [[320, 50], [320, 80]], 'div-gpt-ad-1563254687988-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Entretenimiento', 'div-gpt-ad-1563254687988-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Entretenimiento', [[300, 100]], 'div-gpt-ad-1563254687988-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'familia':   ///FAMILIA
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Familia', [[300, 250]], 'div-gpt-ad-1484837580456-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Familia', [[300, 250]], 'div-gpt-ad-1484837580456-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Familia', [[300, 250]], 'div-gpt-ad-1484837580456-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Familia', [[320, 50], [320, 80]], 'div-gpt-ad-1484837580456-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Familia', 'div-gpt-ad-1484837580456-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Familia', [[300, 100]], 'div-gpt-ad-1484837580456-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'judicial':   ///JUDICIAL
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Judicial', [[300, 250]], 'div-gpt-ad-1456897983583-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Judicial', [[300, 250]], 'div-gpt-ad-1456897983583-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Judicial', [[300, 250]], 'div-gpt-ad-1456897983583-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Judicial', [[320, 50], [320, 80]], 'div-gpt-ad-1456897983583-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Judicial', 'div-gpt-ad-1456897983583-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Judicial', [[300, 100]], 'div-gpt-ad-1456897983583-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'lo-positivo':   ///LO POSITIVO
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Lo_Positivo', [[300, 250]], 'div-gpt-ad-1481213547833-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Lo_Positivo', [[300, 250]], 'div-gpt-ad-1481213547833-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Lo_Positivo', [[300, 250]], 'div-gpt-ad-1481213547833-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Lo_Positivo', [[320, 50], [320, 80]], 'div-gpt-ad-1481213547833-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Positivo', 'div-gpt-ad-1481213547833-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Positivo', [[300, 100]], 'div-gpt-ad-1481213547833-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'medio-ambiente':   ///MEDIO AMBIENTE
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Medio_Ambiente', [[300, 250]], 'div-gpt-ad-1235498765743-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Medio_Ambiente', [[300, 250]], 'div-gpt-ad-1235498765743-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Medio_Ambiente', [[300, 250]], 'div-gpt-ad-1235498765743-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Medio_Ambiente', [[320, 50], [320, 80]], 'div-gpt-ad-1235498765743-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Medio_Ambiente', 'div-gpt-ad-1235498765743-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Medio_Ambiente', [[300, 100]], 'div-gpt-ad-1235498765743-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'multimedia':
+				case 'multimedia/videos':
+				case 'multimedia/fotos':
+				case 'multimedia/audios':
+				case 'multimedia/infografias':
+				case 'multimedia/especiales':  ///MULTIMEDIA
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Multimedia', [[300, 250]], 'div-gpt-ad-1568798713255-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Multimedia', [[300, 250]], 'div-gpt-ad-1568798713255-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Multimedia', [[300, 250]], 'div-gpt-ad-1568798713255-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Multimedia', [[320, 50], [320, 80]], 'div-gpt-ad-1568798713255-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Multimedia', 'div-gpt-ad-1568798713255-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Multimedia', [[300, 100]], 'div-gpt-ad-1568798713255-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'mundo':   ///MUNDO
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Mundo', [[300, 250]], 'div-gpt-ad-1456879821352-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Mundo', [[300, 250]], 'div-gpt-ad-1456879821352-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Mundo', [[300, 250]], 'div-gpt-ad-1456879821352-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Mundo', [[320, 50], [320, 80]], 'div-gpt-ad-1456879821352-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Mundo', 'div-gpt-ad-1456879821352-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Mundo', [[300, 100]], 'div-gpt-ad-1456879821352-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'opinion': case 'opinion/editorial': case 'opinion/columnistas': case 'opinion/caricaturas': case 'opinion/molino-de-papel': ///OPINION
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Opinion', [[300, 250]], 'div-gpt-ad-1564879563236-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Opinion', [[300, 250]], 'div-gpt-ad-1564879563236-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Opinion', [[320, 50], [320, 80]], 'div-gpt-ad-1564879563236-2').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Opinion', 'div-gpt-ad-1564879563236-3').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Opinion', [[300, 100]], 'div-gpt-ad-1564879563236-4').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'politica':   ///POLITICA
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Politica', [[300, 250]], 'div-gpt-ad-1354876123899-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Politica', [[300, 250]], 'div-gpt-ad-1354876123899-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Politica', [[300, 250]], 'div-gpt-ad-1354876123899-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Politica', [[320, 50], [320, 80]], 'div-gpt-ad-1354876123899-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Politica', 'div-gpt-ad-1354876123899-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Politica', [[300, 100]], 'div-gpt-ad-1354876123899-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'proceso-de-paz':   ///PROCESO DE PAZ
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Proceso_de_Paz', [[300, 250]], 'div-gpt-ad-1484837557876-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Proceso_de_Paz', [[300, 250]], 'div-gpt-ad-1484837557876-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Proceso_de_Paz', [[300, 250]], 'div-gpt-ad-1484837557876-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Proceso_de_Paz', [[320, 50], [320, 80]], 'div-gpt-ad-1484837557876-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Proceso_de_Paz', 'div-gpt-ad-1484837557876-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_MovilEP_Movil_Proceso_de_Paz_Home', [[300, 100]], 'div-gpt-ad-1484837557876-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'sociales': ///SOCIALES
+				case 'sociales/cocteles':
+				case 'sociales/matrimonios':
+				case 'sociales/cumpleanos':
+				case 'sociales/obituarios':    ///SOCIALES
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Sociales', [[300, 250]], 'div-gpt-ad-1324657988414-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Sociales', [[300, 250]], 'div-gpt-ad-1324657988414-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Sociales', [[300, 250]], 'div-gpt-ad-1324657988414-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Sociales', [[320, 50], [320, 80]], 'div-gpt-ad-1324657988414-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Sociales', 'div-gpt-ad-1324657988414-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Sociales', [[300, 100]], 'div-gpt-ad-1324657988414-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'tecnologia':   ///TECNOLOGIA
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Tecnologia', [[300, 250]], 'div-gpt-ad-1324679843214-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Tecnologia', [[300, 250]], 'div-gpt-ad-1324679843214-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Tecnologia', [[300, 250]], 'div-gpt-ad-1324679843214-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Tecnologia', [[320, 50], [320, 80]], 'div-gpt-ad-1324679843214-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Tecnologia', 'div-gpt-ad-1324679843214-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Tecnologia', [[300, 100]], 'div-gpt-ad-1324679843214-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'valle':   ///VALLE
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Valle', [[300, 250]], 'div-gpt-ad-1456532154322-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Valle', [[300, 250]], 'div-gpt-ad-1456532154322-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Valle', [[300, 250]], 'div-gpt-ad-1456532154322-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Valle', [[320, 50], [320, 80]], 'div-gpt-ad-1456532154322-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Valle', 'div-gpt-ad-1456532154322-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Valle', [[300, 100]], 'div-gpt-ad-1456532154322-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'contact': ///CONTACTENOS
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function () {
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[320, 50], [320, 80]], 'div-gpt-ad-1481811834487-0').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', 'div-gpt-ad-1481811834487-8').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[300, 100]], 'div-gpt-ad-1481811834487-9').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'search': ///RESULTADOS
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function(){
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Home', [[320, 50], [320, 80]], 'div-gpt-ad-1481811834487-0').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+				case 'vehiculos': ///VEHICULOS
+				console.log('ADS mobile seccion => '+seccion);
+				console.log('ADS mobile article => '+article);
+				googletag.cmd.push(function(){
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Vehiculos', [[300, 250]], 'div-gpt-ad-1496356005617-0').setTargeting('Pos', ['1']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Vehiculos', [[300, 250]], 'div-gpt-ad-1496356005617-1').setTargeting('Pos', ['2']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Vehiculos', [[300, 250]], 'div-gpt-ad-1496356005617-2').setTargeting('Pos', ['3']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Vehiculos', [[320, 50], [320, 80]], 'div-gpt-ad-1496356005617-3').setTargeting('Form', ['Barra_Flotante']).addService(googletag.pubads());
+					googletag.defineOutOfPageSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Vehiculos', 'div-gpt-ad-1496356005617-4').setTargeting('Form', ['Layer']).addService(googletag.pubads());
+					googletag.defineSlot('/147024719/EP_El_Pais/EP_El_Pais_/EP_Movil/EP_Movil_Vehiculos', [[300, 100]], 'div-gpt-ad-1496356005617-5').setTargeting('Form', ['Native']).addService(googletag.pubads());
+					endGoogleTag();
+				});
+				break;
+			}
+		}
+	}

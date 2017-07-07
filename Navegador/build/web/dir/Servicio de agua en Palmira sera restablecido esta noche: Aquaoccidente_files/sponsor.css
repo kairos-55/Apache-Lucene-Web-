@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+#clasificados-sponsor-module {
+  max-width: 1000px;
+  font-family: "Lato", sans-serif;
+  margin: 0 auto 20px; }
+  #clasificados-sponsor-module::after {
+    clear: both;
+    content: "";
+    display: block; }
+  #clasificados-sponsor-module a {
+    text-decoration: none; }
+  #clasificados-sponsor-module .img-responsive {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto; }
+  #clasificados-sponsor-module .img-left {
+    float: left; }
+  #clasificados-sponsor-module .img-right {
+    float: right; }
+  #clasificados-sponsor-module .module-header {
+    width: calc(100% - 40px);
+    float: left;
+    margin-left: 20px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 10px; }
+    #clasificados-sponsor-module .module-header::after {
+      clear: both;
+      content: "";
+      display: block; }
+    #clasificados-sponsor-module .module-header .header-item {
+      width: calc(33.33333% - 26.66667px);
+      float: left;
+      margin-left: 20px; }
+      #clasificados-sponsor-module .module-header .header-item.clasificados-logo img, #clasificados-sponsor-module .module-header .header-item.clasificados-phone img {
+        max-height: 44px; }
+      #clasificados-sponsor-module .module-header .header-item:last-child {
+        padding-right: 20px; }
+  #clasificados-sponsor-module .module-body {
+    width: calc(100% - 40px);
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 20px; }
+    #clasificados-sponsor-module .module-body::after {
+      clear: both;
+      content: "";
+      display: block; }
+    #clasificados-sponsor-module .module-body .body-item {
+      width: calc(25% - 25px);
+      float: left;
+      margin-left: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #DADADA;
+      padding-bottom: 10px; }
+      #clasificados-sponsor-module .module-body .body-item .body-item-thumb {
+        max-width: 90%;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px; }
+      #clasificados-sponsor-module .module-body .body-item .body-item-title {
+        max-width: 90%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: #333333; }
+        #clasificados-sponsor-module .module-body .body-item .body-item-title a {
+          text-decoration: none;
+          color: #333333; }
+      #clasificados-sponsor-module .module-body .body-item .body-item-price {
+        display: block;
+        max-width: 90%;
+        margin: 0 auto;
+        color: #FF9000;
+        font-size: 20px; }
+  #clasificados-sponsor-module .module-actions {
+    width: calc(100% - 40px);
+    float: left;
+    margin-left: 20px;
+    text-align: center; }
+    #clasificados-sponsor-module .module-actions::after {
+      clear: both;
+      content: "";
+      display: block; }
+    #clasificados-sponsor-module .module-actions .module-action {
+      background-color: #FF9000;
+      padding: 10px 20px;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      color: #FFF;
+      text-transform: uppercase;
+      font-size: 18px; }
+  @media (max-width: 767px) {
+    #clasificados-sponsor-module .module-header .header-item {
+      width: calc(100%);
+      float: left;
+      margin-left: 0; }
+      #clasificados-sponsor-module .module-header .header-item.clasificados-logo, #clasificados-sponsor-module .module-header .header-item.clasificados-phone {
+        display: none; }
+    #clasificados-sponsor-module .module-body {
+      width: calc(100%);
+      float: left;
+      margin-left: 0; }
+      #clasificados-sponsor-module .module-body .body-item {
+        width: calc(100%);
+        float: left;
+        margin-left: 0; }
+        #clasificados-sponsor-module .module-body .body-item::after {
+          clear: both;
+          content: "";
+          display: block; }
+        #clasificados-sponsor-module .module-body .body-item .body-item-thumb {
+          width: calc(50% - 30px);
+          float: left;
+          margin-left: 20px;
+          margin-right: 10px; }
+        #clasificados-sponsor-module .module-body .body-item .body-item-title, #clasificados-sponsor-module .module-body .body-item .body-item-price {
+          font-size: 18px;
+          margin-bottom: 5px; } }

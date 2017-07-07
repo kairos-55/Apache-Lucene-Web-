@@ -1,0 +1,1 @@
+adapt_dataRequest_elpais_admp.campaignCallback({"evId":"-entered"})
